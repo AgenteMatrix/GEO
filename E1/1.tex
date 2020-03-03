@@ -1,0 +1,180 @@
+\textbf{1. } \textit{En $\mathbb{A}^{3}_\mathbb{R}$ con la referencia natural considerad el punto $p$ = (3, 5, 1) y las rectas $r$ y $s$ de ecuaciones}
+
+\begin{gather*}
+    r : 
+    \begin{cases}
+    x + y = 0 \\
+    x + z - 2 = 0
+    \end{cases}
+    \quad
+    s : (x, y, z) = (1, 1, 0) + [(1, 1, 1)]
+\end{gather*}
+
+\textbf{(a) } \textit{Encontrad una recta $l$ que corte $r$ y $s$ y que contenga el punto $p$} \\
+
+Veamos primero si $r \cap s \neq \emptyset$, para esto pasaremos $s$ a ecuaciones cartesianas mediante eliminación Gaussiana.
+
+\begin{gather*}
+    \begin{pmatrix}
+    1 & x - 1 \\
+    1 & y - 1 \\ 
+    1 & z
+    \end{pmatrix}
+    \simeq
+    \begin{pmatrix}
+    1 & x - 1 \\
+    0 & y - x\\ 
+    0 & z - x + 1
+    \end{pmatrix}
+    \ \Longrightarrow \
+    s = 
+    \begin{cases}
+    x - y = 0 \\
+    x - z = 1
+    \end{cases}
+\end{gather*}
+\\
+
+Calculemos ahora la intersección de $r, s$ : 
+
+\begin{gather*}
+    \begin{cases}
+    x + y = 0 \\
+    x + z - 2 = 0 \\
+    x - y = 0 \\
+    x - z - 1 = 0
+    \end{cases}
+    \ \Longrightarrow
+    \begin{cases}
+    x = -y \\
+    x = y
+    \end{cases}
+    \Longrightarrow \ x = y = 0 \ \Longrightarrow
+    \begin{cases}
+    0 = 0 \\
+    z = 2 \\
+    0 = 0 \\
+    z = -1
+    \end{cases}
+\end{gather*}
+
+Como podemos observar, este sistema es claramente incompatible, por tanto la intersección de $r$ y $s$ es vacía. Comprobemos ahora si $r \parallel s$. Para esto pasemos $r$ a sus ecuaciones paramétricas.
+\begin{gather*}
+    r : (x, y, z) = (0, 0, 2) + [(1, -1, -1)] \\
+    s : (x, y, z) = (1, 1, 0) + [(1, 1, 1)]
+\end{gather*}
+
+Se ve claramente que los vectores directores de $s$
+ y $r$ son linealmente independientes, por tanto $r \nparallel s$. Como consecuencia, $r$ y $s$ se cruzan. En esta situación no podemos aprovecharnos de la posición relativa de estas rectas para construir $l$, entonces tendremos que imponer que corte a $r$ y $s$ en dos puntos distintos y crear la recta después. Sea $A = l \cap r$ y sea $B = l \cap s$, entonces $A$ es de la forma $(a, -a, 2 - a)$ y $B$ es de la forma $(b + 1, b + 1, b)$. Sea $\Vec{AB} = (b - a + 1, b + a + 1, b + a -2)$, construimos la siguiente recta:
+ 
+ \begin{gather*}
+    l = B + \Vec{AB} = 
+     \begin{cases}
+     x = b + 1 + c(b - a + 1) \\
+     y = b + 1 + c(b + a + 1) \\
+     z = b + c(b + a -2)
+     \end{cases}
+ \end{gather*}
+
+Imponiendo que contenga a $p$ y resolviendo el sistema obtenemos:
+
+\begin{gather*}
+     \begin{cases}
+     b + 1 + c(b - a + 1) = 3 \\
+     b + 1 + c(b + a + 1) = 5 \\
+     b + c(b + a -2) = 1
+     \end{cases}
+     \ \Longrightarrow \quad a = b = c = 1
+ \end{gather*}
+ 
+ Como el sistema anterior es compatible determinado, la recta $l$ es la única que cumple las hipótesis del enunciado. Su expresión en forma paramétrica es: 
+ 
+ \begin{gather*}
+    l : (x, y, z) = (2, 2, 1) + [(1, 3, 0)]
+ \end{gather*}
+ 
+ \textbf{(b) } \textit{Encontrad una referencia afin $\Bar{R}$ en la cual $r : \bar{y} = \bar{z} = 0$, $s : \bar{x} = \bar{z} - 2 = 0$ y $p = (0, 0, a)_{\bar{R}}$.}
+ 
+ Para encontrar $\bar{R}$, pasemos primero las ecuaciones cartesianas que definen a  $r$ y $s$ en la referencia $\bar{R}$ a sus ecuaciones paramétricas.
+ 
+ \begin{gather*}
+     r : (\bar{x},\bar{y}, \bar{z}) = (0, 0, 0) + [(1, 0, 0)] \\
+     s : (\bar{x}, \bar{y}, \bar{z}) = (0, 0, 2) + [(0, 1, 0)]
+ \end{gather*}
+ 
+ Sea $\bar{R} = \{p_0; v_1, v_2, v_3\}$, podemos observar fácilmente que $v_1$ es el vector director de $r$ y que $v_2$ es el vector director de $s$.
+ 
+ \begin{gather*}
+     (1, 0, 0)_{\bar{R}} = 1(v_1) + 0(v_2) + 0(v_3) \Longrightarrow \ v_1 = (1, -1, -1) \\
+     (0, 1, 0)_{\bar{R}} = 0(v_1) + 1(v_2) + 0(v_3) \Longrightarrow \ v_2 = (1, 1, 1)
+ \end{gather*}
+ 
+Una vez encontrados $v_1$ y $v_2$, necesitamos un tercer vector linealmente independiente con estos dos vectores para formar la base de la referencia. Vectores linealmente independientes a $v_1, v_2$ hay infinitos, pero podemos hacer uso de lo siguiente: vemos que $p=(0, 0, a)_{\bar{R}}$ y como solo tiene entradas diferentes de 0 en la tercera componente esto implica que $p$ vive en $<v_3>$. Por tanto, de los infinitos vectores linealmente independientes con $v_1, v_2$ si imponemos que además el espacio que genera este vector contenga a $p$, solamente hay un vector que cumpla esto. Este es el vector director de la recta $l$ del apartado \textbf{(a)}. Como sabemos $p \in l$ y además $l \cap r \neq \emptyset, l \cap s \neq \emptyset \Longrightarrow v_1, v_2, v_3$ l.i, siendo $v_3$ un múltiple del vector director de $l$. Es decir, $v_3 = \lambda(1,3,0)$. La $\lambda$ será determinada más adelante en este ejercicio, de momento nos serviremos de que $v_3$ sea un múltiple de (1, 3, 0).
+
+Ahora que ya hemos encontrado los vectores de la base de la referencia $\bar{R}$, observamos que $(0, 0, 0)_{\bar{R}} \in r_{\bar{R}}$. Esto significa que el punto $p_0$ de la referencia $\bar{R}$ pertenece a la recta $r$. Otra observación a hacer es la siguiente:
+ 
+ \begin{gather*}
+     p_{\bar{R}} = (0, 0, a)_{\bar{R}} \ \Longrightarrow \ p_0 + 0(v_1) + 0(v_2) + a(v_3) = p_0 + a\lambda(\frac{1}{2}, \frac{3}{2}, 0) = (3, 5, 1) = p
+ \end{gather*}
+ 
+ Como $p$ en la referencia ordinaria tiene un 1 en la tercera componente y $v_3$ es nulo en la tercera componente, implica que $p_0$ tiene que tener un 1 en su tercera componente. Imponiendo esto y teniendo en cuenta que $p_0$ pertenece a $r$, tenemos: 
+ 
+ \begin{gather*}
+     r = 
+     \begin{cases}
+     x + y = 0 \\
+     x + z - 2 = 0
+     \end{cases}
+     \Longrightarrow \quad
+     \begin{cases}
+     y = -1 \\
+     x = 1
+     \end{cases}
+      \text{, \quad(con z = 1)}
+ \end{gather*}
+ \\
+ 
+ Por tanto $p_0$ = (1, -1, 1) en la referencia ordinaria. 
+ 
+ Finalmente solo nos queda determinar qué múltiple del vector $v_3$ forma parte de la referencia $\bar{R}$, dicho de otra manera, queda determinar la $\lambda$. 
+ 
+ \begin{gather*}
+     (0, 0, 2)_{\bar{R}} \in s \ \Longrightarrow \ p_0 + 2\lambda v_3 \in s \ \Longrightarrow \ (1 + 2\lambda, -1 +6\lambda, 1) \in s \ \Longleftrightarrow \\ 
+     \\
+     \begin{cases}
+     (1 + 2\lambda) + (1 - 6\lambda) = 0 \\
+     (1 + 2\lambda) - (1) = 1
+     \end{cases} 
+     \Longleftrightarrow \quad \lambda = \frac{1}{2}
+ \end{gather*}
+ \\
+ 
+De modo que $v_3 = \lambda(1,3,0) = \frac{1}{2}(1,3,0) = (\frac{1}{2}, \frac{3}{2}, 0)$. 
+
+En conclusión, la referencia afín que es requerida en el enunciado de este ejercicio es $\bar{R} = \{p_0; v_1, v_2, v_3 \} = \{(1, -1, 1); (1, -1, -1), (1, 1, 1), (\frac{1}{2}, \frac{3}{2}, 0) \}$. \\
+ 
+ \pagebreak
+ 
+ \textbf{(c) } \textit{Decid cuento vale $a$} \\
+ 
+Sabiendo que $\bar{R} = \{(1, -1, 1); (1, -1, -1), (1, 1, 1), (\frac{1}{2}, \frac{3}{2}, 0) \}$, es inmediato comprobar que $a$ = 4, ya que:
+ 
+ \begin{gather*}
+     p_{\bar{R}} = (0, 0, a)_{\bar{R}} \Longrightarrow \ p_0 + a(v_3) = (1, -1, 1) + a(\frac{1}{2}, \frac{3}{2}, 0) = (3, 5, 1) = p_R \\ (1 + \frac{a}{2}, -1 + \frac{3a}{2}, 1) = (3, 5, 1) \ \Longleftrightarrow \ a = 4
+ \end{gather*}
+ 
+ Una manera alternativa de proceder es mediante el cálculo de razones simples, que recordemos, su valor es independiente de la referencia escogida. Entonces, sea $A = r \cap l$, $B = s \cap l$ y el punto $p$. Como $A, B, p \in l$, esto implica que estos tres puntos están alineados y que podemos calcular su razón simple:
+ 
+ \begin{gather*}
+     p = (3, 5, 1) \quad A = (1, -1, 1) \quad B = (2, 2, 1) \\
+     \\
+     (p, A, B) = \frac{2 - 3}{1 - 3} = \frac{1}{2}
+ \end{gather*}
+ 
+ Por tanto, expresando los puntos $p, A, B$ en la referencia $\bar{R}$ y calculando su razón simple:
+ 
+ \begin{gather*}
+     p_{\bar{R}} = (0, 0, a) \quad A_{\bar{R}} = (0, 0, 0) \quad B_{\bar{R}} = (0, 0, 2) \\
+     \\
+     (p, A, B)_{\bar{R}} = \frac{2 - a}{-a} = \frac{1}{2} \ \Longleftrightarrow \ a = 4
+ \end{gather*}

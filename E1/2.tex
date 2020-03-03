@@ -1,0 +1,100 @@
+\textbf{2. } \textit{Discutid en función del parámetro $a\in \mathbb{R}$ la posición relativa de los planos $\pi_1$ y $\pi_2$ de $\mathbb{A}^{4}_\mathbb{R}$ que tienen por ecuaciones en la referencia natural}
+
+\begin{gather*}
+    \pi_1 : 
+    \begin{cases}
+    x = 1 + \lambda + \mu \\
+    y = -2\lambda + \mu \\
+    z = 2 + \mu \\
+    u = 2
+    \end{cases}
+    (\lambda, \mu \in \mathbb{R}) \hspace{15mm}
+    \pi_2 : 
+    \begin{cases}
+    x -2u = 0 \\
+    x + 2y -az = 1
+    \end{cases}
+\end{gather*}
+
+Antes de empezar, recordemos que existen solamente 3 posibles posiciones relativas de estos planos: $\pi_1 \parallel \pi_2$, $\pi_1 \cap \pi_2 \neq \emptyset$ o, si no se dan ninguna de los anteriores escenarios, $\pi_1, \pi_2$ se cruzan.
+\\
+
+Primero comprobaremos si por algún valor de $a$ los planos $\pi_1$ y $\pi_2$ se cortan. Para eso substituimos en las ecuaciones que definen $\pi_2$ los valores de las coordenadas de $\pi_1$ en función de $\lambda$ i $\mu$ :
+
+\begin{gather*}
+    \begin{cases}
+    (1 + \lambda + \mu) -2(2) = 0 \\
+    (1 + \lambda + \mu) + 2(-2\lambda + \mu) -a(2 + \mu) = 1
+    \end{cases}
+    \Longrightarrow
+    \begin{cases}
+    \lambda + \mu = 3 \\
+    -3\lambda +3\mu -a\mu = 2a
+    \end{cases}
+\end{gather*}
+
+Resolviendo la ecuación substituyendo la primera ecuación en función de $\mu$ en la segunda, nos queda:
+
+\begin{gather*}
+    -3(3 - \mu) + 3\mu - a\mu = 2a\ \Longrightarrow \ -9 + \mu(6 - a) = 2a\ \Longrightarrow\ \mu = \frac{2a + 9}{(6 - a)}
+\end{gather*}
+
+Observamos que si $a \neq 6$ el sistema anterior es un sistema compatible determinado, y por tanto, \textbf{los planos se cortan en un punto}. Calculemos la expresión de este punto en función de $a$ :
+
+\begin{gather*}
+    \begin{cases}
+    \lambda + \mu = 3 \\
+    \mu = \frac{2a + 9}{6 - a}
+    \end{cases}
+    \Longrightarrow \
+    \begin{cases}
+    \lambda = \frac{9 - 5a}{6 - a} \\
+    \mu = \frac{2a + 9}{6 - a}
+    \end{cases}
+    \Longrightarrow \
+    \begin{cases}
+    x = 1 + \frac{9 - 5a}{6 - a} + \frac{2a + 9}{6 - a} = 4 \\
+    y = \frac{-2(9 - 5a)}{6 - a} + \frac{2a + 9}{6 - a} = \frac{-9 + 12a}{6 - a} \\
+    z = 2 + \frac{2a + 9}{6 - a} = \frac{21}{6 - a} \\
+    u = 2
+    \end{cases}
+\end{gather*}
+
+Por tanto, si $a \neq 6$, 
+
+\begin{gather*}
+    \pi_1 \cap \pi_2 = 
+    \begin{pmatrix}
+    4 \\ \frac{-9 + 12a}{6- a} \\ \frac{21}{6 - a} \\ 2
+    \end{pmatrix}
+\end{gather*}
+
+Ahora el único caso que nos queda comprobar es cuando $a = 6$, que como sabemos que los planos no intersecan, tenemos que comprobar si son paralelos, en caso contrario los planos se cruzan. Para esto expresemos $\pi_1$ en forma paramétrica:
+
+\begin{gather*}
+    \pi_1 = 
+    \begin{pmatrix}
+    1 \\ 0 \\ 2 \\ 2
+    \end{pmatrix}
+    + \lambda
+    \begin{pmatrix}
+    1 \\ -2 \\ 0 \\ 0
+    \end{pmatrix}
+    + \mu
+    \begin{pmatrix}
+    1 \\ 1 \\ 1 \\ 0
+    \end{pmatrix}
+    , \quad \lambda, \mu \in \mathbb{R}
+\end{gather*}
+
+Sean $v_1$ = (1, -2, 0 0) y $v_2$ = (1, 1, 1, 0) los vectores directores de $\pi_1$, entonces: \\
+$\pi_1 \parallel \pi_2 \Longleftrightarrow v_1$ y $v_2$ satisfacen las ecuaciones homogéneas que definen a $\pi_2$. Comprobemos esto último con $v_1$ :
+
+\begin{gather*}
+    \begin{cases}
+    1 - 2(0) = 1 = 0 \\
+    1 + 2(-2) - 6(0) = 1 - 4 = -3 = 0
+    \end{cases}
+\end{gather*}
+
+Como hemos visto, $v_1$ no satisface las ecuaciones de $\pi_2$ homogenizadas, por tanto, sin necesidad de comprobarlo por $v_2$ (ya que $\pi_1$ y $\pi_2$ son variedades lineales con la misma dimensión), podemos afirmar que $\pi_1 \nparallel \pi_2$. Así que por $a = 6$ los planos no se intersecan ni son paralelos, por tanto $\pi_1, \pi_2$ \textbf{se cruzan}.
