@@ -1,0 +1,149 @@
+\textbf{2. } \textit{Considerad la afinidad $f$ de $\mathbb{A}^{4}_\mathbb{R}$ con las propiedades siguientes:}
+\begin{itemize}[-]
+    \item \textit{El plano $\pi$ :}$ \begin{cases}
+     x - z = 1\\ 
+     y - t = -1
+    \end{cases}$ \textit{és $f$-invariante i $f_{\mid\pi}$ es una homotecia de razón 2.}
+    \item \textit{La recta }$r$ = (2,1,0,1) + [(1,1,0,0)] \textit{es una recta de puntos fijos.}
+    \item \textit{La recta }$s$ = (1,0,2,-1) + [(0,0,1,-1)] \textit{es $f$-invariante y $f_{\mid s}$ es una simetría central.}
+\end{itemize}
+\vspace{5mm}
+\textit{Calculad $f(2,0,3,-2)$.}
+
+Para calcular $f(2,0,3,-2)$ hallemos primero la matriz de la afinidad en la referencia canónica. Pero para poder encontrarla hay que hacer primero unas cuantas observaciones sobre el plano y las rectas que nos son dadas en el enunciado. Empecemos primero por el plano $\pi$.
+
+De $\pi$ sabemos que es $f$-invariante y más importante, que  $f_{\mid\pi}$ es una homotecia de razón 2. Por esta última razón, sabemos que en una cierta referencia $R_\pi$, la matriz de  $f_{\mid\pi}$ en coordenadas ampliadas es:
+
+\begin{gather*}
+    M(f_{\mid\pi}, R_\pi) = 
+    \begin{pmatrix}
+    2 & 0 & 0\\
+    0 & 2 & 0\\
+    0 & 0 & 1
+    \end{pmatrix}
+\end{gather*}
+
+Con $R_\pi = \{p_0; v_1, v_1\}$, donde $p_0$ es el punto fijo de la homotecia (no nos es necesario encontrarlo, pero por teoría sabemos que existe), y $v_1,v_2$ son una base cualquiera de $E_{\mid\pi}$, como por ejemplo $v_1=(1,0,1,0)$ y $v_2=(0,1,0,1)$ que son los vectores directores de $\pi$.
+
+Continuemos ahora con la recta $r$, que sabemos que es una recta de puntos fijos, hecho que implica que el vector director de $r$ es un VEP de VAP 1, de modo que la matriz en coordenadas ampliadas de $f_{\mid r}$ en la referencia $R_r = \{p_1; v_3\} = \{(2,1,0,1); (1,1,0,0)\}$ donde $p_1$ es un punto de la recta $r$ y $v_3$ su vector director, es:
+
+\begin{gather*}
+    M(f_{\mid r}, R_r) = 
+    \begin{pmatrix}
+    1 & 0\\
+    0 & 1
+    \end{pmatrix}
+\end{gather*}
+
+Finalmente, sabemos que $s$ es $f$-invariante y que $f_{\mid s}$ es uan simetría central. Una vez más, por esta última razón podemos encontrar una cierta referencia $R_s = \{p_2; v_4\}$ con $p_2$ el punto fijo de la simetría central (como en el caso de la homotecia, no nos hace falta encontrar este punto, nos servimos de que sabemos de su existencia), y $v_4$ una base cualquiera de $E_{\mid s}$. Como $E_{\mid s}$ tiene dimensión 1, podemos coger un vector cualquiera para que sea base de este subespacio, como por ejemplo el vector director de $s$, en tal caso $v_4 = (0,0,1,-1)$. En esta referencia $R_s$, la matriz de $f_{\mid s}$ en coordenadas ampliadas es:
+
+\begin{gather*}
+    M(f_{\mid s, R_s} = 
+    \begin{pmatrix}
+    -1 & 0\\
+    0 & 1
+    \end{pmatrix}
+\end{gather*}
+
+Veamos que los vectores de las bases de las 3 diferentes referencias que hemos definido son L.I.
+
+\begin{gather*}
+    \begin{pmatrix}
+    1 & 0 & 1 & 0\\
+    0 & 1 & 1 & 0\\
+    1 & 0 & 0 & 1\\
+    0 & 1 & 0 & -1
+    \end{pmatrix}
+    \simeq
+    \begin{pmatrix}
+    1 & 0 & 1 & 0\\
+    0 & 1 & 1 & 0\\
+    0 & 0 & -1 & 1\\
+    0 & 0 & -1 & -1
+    \end{pmatrix}
+    \simeq
+    \begin{pmatrix}
+    1 & 0 & 1 & 0\\
+    0 & 1 & 1 & 0\\
+    0 & 0 & -1 & 1\\
+    0 & 0 & 0 & -2
+    \end{pmatrix}
+    \Longrightarrow \text{Rango }(v_1,v_2,v_3,v_4) = 4
+\end{gather*}
+\vspace{2mm}
+
+Como Rango ($v_1,v_2,v_3,v_4$) = 4 $\Longrightarrow$ $v_1,v_2,v_3,v_4$ son L.I $\Longrightarrow$ $v_1,v_2,v_3,v_4$ forman una base de $E = R^4$. Como forman base entonces podemos considerar la siguiente referencia $R = \{p; v_1,v_2,v_3,v_4\}$ con $p = (2,1,0,1) \in r$. Como el espacio que generan [$v_1,v_2$], [$v_3$] y [$v_4$] son $f$-invariantes tal y como nos indica el enunciado del problema, podemos entonces construir la matriz de $f$ por bloques, usando los bloques perteneciente a cada subespacio invariante que hemos encontrado con anterioridad. Así pues,
+
+\begin{gather*}
+    M(f, R) = 
+    \begin{pmatrix}
+    2 & 0 & 0 & 0 & 0\\
+    0 & 2 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0 & 0\\
+    0 & 0 & 0 & -1 & 0\\
+    0 & 0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{gather*}
+\vspace{3mm}
+
+Pasemos ahora la matriz $M(f, R)$ de referencia $R$ a la ordinaria $e$.
+
+\begin{gather*}
+    M(f, e) = M_{R \rightarrow e} M(f, R) M_{e \rightarrow R} =
+    \begin{pmatrix}
+    1 & 0 & 1 & 0 & 2\\
+    0 & 1 & 1 & 0 & 1\\
+    1 & 0 & 0 & 1 & 0\\
+    0 & 1 & 0 & -1 & 1\\
+    0 & 0 & 0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+    2 & 0 & 0 & 0 & 0\\
+    0 & 2 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0 & 0\\
+    0 & 0 & 0 & -1 & 0\\
+    0 & 0 & 0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+    1 & 0 & 1 & 0 & 2\\
+    0 & 1 & 1 & 0 & 1\\
+    1 & 0 & 0 & 1 & 0\\
+    0 & 1 & 0 & -1 & 1\\
+    0 & 0 & 0 & 0 & 1
+    \end{pmatrix}^{-1}
+    \\ 
+    \\
+    M(f, e) = 
+    \begin{pmatrix}
+    3/2 & -1/2 & 1/2 & 1/2 & 1\\
+    -1/2 & 3/2 & 1/2 & 1/2 & 0\\
+    3/2 & -3/2 & 1/2 & 3/2 & -3\\
+    -3/2 & 3/2 & 3/2 & 1/2 & 2\\
+    0 & 0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{gather*}
+
+\pagebreak
+
+Finalmente, una vez encontrada la matriz de la afinidad $f$ en la referencia ordinaria, calculemos $f(2,0,3,-2)$.
+
+\begin{gather*}
+    f(2,0,3,-2) =
+    \begin{pmatrix}
+    3/2 & -1/2 & 1/2 & 1/2 & 1\\
+    -1/2 & 3/2 & 1/2 & 1/2 & 0\\
+    3/2 & -3/2 & 1/2 & 3/2 & -3\\
+    -3/2 & 3/2 & 3/2 & 1/2 & 2\\
+    0 & 0 & 0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+    2\\ 0\\ 3\\ -2\\ 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    5/2\\ -1/2\\ -3/2\\ 5/2\\ 1
+    \end{pmatrix}
+\end{gather*}
+\vspace{3mm}
+
+En conclusión, gracias a que los subespacios que nos daba el enunciado eran $f$-invariantes y los vectores directores que los generaban eran L.I y formaban una base del espacio, hemos podido construir la matriz de $f$ por bloques, y una vez obtenida y cambiándola de referencia a la ordinaria, la obtención de $f(2,0,3,-2) =  (5/2, -1/2, -3/2, 5/2)$ es directa.
