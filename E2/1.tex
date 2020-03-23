@@ -94,7 +94,7 @@ Una vez encontrada la matriz de la afinidad en cuestión, expresémosla ahora co
     = (-1-x)(3-x) + 4 = x^{2} -2x + 1 = (x - 1)^{2}
 \end{gather*}
 
-Esta afinidad consta de valor propio 1 con una multiplicidad aritmética 2. Calculemos su multiplicidad geométrica para comprobar si diagonaliza.
+Esta afinidad consta de valor propio 1 con una multiplicidad algebraica 2. Calculemos su multiplicidad geométrica para comprobar si diagonaliza.
 
 \begin{gather*}
     (\widetilde{A}- I)
@@ -131,10 +131,10 @@ Como nos encontramos en el plano afin (dim 2) y ya disponemos de uno de los dos 
     \begin{pmatrix}
     2\\ -1
     \end{pmatrix}
-    \Longrightarrow x + 2y = -1 \Longrightarrow (x,y) = (-3, 1)
+    \Longrightarrow x + 2y = -1 \Longrightarrow v_2 = (-3, 1)
 \end{gather*}
 
-Sea entonces $R' = \{A; v_1, v_2\}$, la afinidad $f$ queda expresada de la siguiente manera:
+Observamos que $v_2 \notin Nuc(\widetilde{A} - I)$ porque no cumple la ecuación $x + 2y = 0$, pero en cambio es trivial ver que $v_2 \in Nuc(\widetilde{A} - I)^2$, ya que como $E = Nuc(\widetilde{A} - I)^2$ todos los vectores están en este subespacio. También vemos que $v_1,v_2$ son L.I y por tanto forman base. Además tenemos que $\widetilde{A}v_1 = v_1$ y que $\widetilde{A}v_2 = v_1 + v_2$. Sea entonces $R' = \{A; v_1, v_2\}$, la afinidad $f$ queda expresada de la siguiente manera:
 
 \begin{gather*}
     f(x,y)_{R'} = 
