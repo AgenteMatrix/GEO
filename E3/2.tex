@@ -1,0 +1,161 @@
+\textbf{2. } \textit{En el espacio euclidiano $\mathbb{E}^{3}$ con la referencia canónica, consideremos los movimientos $f,g,h$ siguientes: $f$ y $g$ son las simetrías especulares respecto a los planos $\pi = x - y = 0$ y $\pi' = x+y+z = 0$ respectivamente, y $h$ tiene expresión}
+\begin{gather*}
+    h(x,y,z) = \frac{1}{3}(x-2y-2z+6, -2x-2y+z+6,-2x+y-2z+6).
+\end{gather*}
+\textbf{(i)} \textit{ Clasificad el movimiento $F = h \circ f$, dando sus elementos característicos.}
+
+\textbf{(ii)} \textit{ Clasificad y dad los elementos característicos de $G = g \circ F$.}
+
+\textbf{(iii)} \textit{ Calculad $F^{15}(0,0,0)$ y $G^{18}(0,0,1)$.}
+\\
+
+\hspace*{10mm} \textbf{(i)} Como $f$ es una simetría especular respecto al plano $\pi$, tenemos que $\forall p \in \mathbb{E}^{3}$, si consideramos el vector $u \in \mathbb{E}^{3}$ perpendicular al plano $\pi$, si $p + \lambda u \in \pi \Longrightarrow f(p) = p + 2\lambda u$. Así que, sea $(x,y,z) \in \mathbb{E}^{3}$ cualquiera, con $u = (1,-1,0)$\footnote{Observamos claramente que $\pi$ es el plano con expresión cartesiana $(1,1,0) + [(1,1,0),(0,0,1)]$, y el vector $u = (1,-1,0)$ es perpendicular a este plano. Tenemos que $<(1,1,0),(1,-1,0)> = 1 -1 = 0$ y $<(0,0,1),(1,-1,0)> = 0$.} y $\lambda = \frac{y-x}{2}$, entonces como $(x,y,z) + \frac{y-x}{2}(1,-1,0) = (\frac{x+y}{2},\frac{x+y}{2},z) \in \pi \Longrightarrow f(x,y,z) = (x,y,z) + 2(\frac{y-x}{2},\frac{x-y}{2},z) = (x + x -y, y + x - y, z) =(y,x,z)$.
+
+Ahora $F(x,y,z) = (h \circ f)(x,y,z) = h(y,x,z) = \frac{1}{3}(y-2x-2z+6, -2y-2x+z+6,-2y+x-2z+6)$. Expresando $F$ en su forma matricial con coordenadas ampliadas y en la base canónica tenemos:
+
+\begin{gather}
+    M(F,e) = \frac{1}{3}
+    \begin{pmatrix}
+    -2 & 1 & -2 & 6\\
+    -2 & -2 & 1 & 6\\
+    1 & -2 & -2 & 6\\
+    0 & 0 & 0 & 3
+    \end{pmatrix}
+\end{gather}
+
+Calculemos ahora el determinante de $\widetilde{F}$
+
+\begin{gather*}
+    det(M(\widetilde{F},e)) = \frac{1}{3}
+    \begin{vmatrix}
+    -2 & 1 & -2 \\
+    -2 & -2 & 1 \\
+    1 & -2 & -2 \\
+    \end{vmatrix}
+    = \frac{1}{3^3}(-8-8-4-4-4+1) =\frac{1}{3^3}(-27) = -1
+\end{gather*}
+
+Como el determinante de $\widetilde{F}$ es -1, $F$ se trata de un movimiento inverso, por tanto puede tratarse de una simetría especular, una simetría especular deslizante o una composición de una rotación y una simetría especular. Busquemos ahora si existen puntos fijos, es decir, $p$ tal que $F(p) = p$.
+
+\begin{gather*}
+    \frac{1}{3}\begin{pmatrix}
+    -2 & 1 & -2 & 6\\
+    -2 & -2 & 1 & 6\\
+    1 & -2 & -2 & 6\\
+    0 & 0 & 0 & 3
+    \end{pmatrix}
+    \begin{pmatrix}
+    x\\y\\z\\1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    x\\y\\z\\1
+    \end{pmatrix}
+    \Longleftrightarrow
+    \begin{cases}
+    \frac{1}{3}(-2x + y -2z + 6) = x\\ \frac{1}{3}(-2x-2y+z+6) =y\\ \frac{1}{3}(x-2y-2z+6)=z    
+    \end{cases}
+    \Longleftrightarrow
+    \begin{cases}
+    x = 5z + 2y -6\\ y = 5x + 2z - 6\\ z = 5y +2x -6
+    \end{cases}
+    \\
+    \\
+    \Longleftrightarrow
+    \begin{pmatrix}
+    x\\y\\z\\1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    1\\1\\1\\1
+    \end{pmatrix}
+\end{gather*}
+
+Por tanto existe un único punto fijo $p = (1,1,1)$. Ahora, según el teorema de clasificación de movimientos en $\mathbb{E}^3$ tenemos que existe una base $R$ donde
+
+\begin{gather*}
+    M(F,R) = 
+    \begin{pmatrix}
+    -1 & 0 & 0 & 0\\
+    0 & cos\alpha & -sin\alpha & 0\\
+    0 & sin\alpha & cos\alpha & 0\\
+    0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{gather*}
+
+Como la traza de la matriz es invariante por la base, tenemos que -1+2cos$\alpha$ = $\frac{1}{3}(-2-2-2) = (-2) \Longrightarrow$ cos$\alpha = -\frac{1}{2} \Longrightarrow \alpha = \pm \frac{2\pi}{3}$, dependiendo de la dirección escogida. Por tanto, al tener un ángulo $\alpha = \pm \frac{2\pi}{3}$, podemos descartar que $F$ sea una simetría especular o una simetría especular deslizante. Tenemos que $F$ es una rotación al rededor de una recta seguido de una simetría especular respecto de un plano perpendicular a la recta. Sabemos que el punto $p = (1,1,1)$ pertenece al plano y a la recta por ser un punto fijo. Para encontrar los puntos de la recta podemos considerar los puntos $q$ tal que $\frac{F(q) + q}{2} = p$, es decir, aquellos que solamente han sido trasladados por la simetría. 
+
+\begin{gather*}
+    \frac{F(q) + q}{2} = p \Longleftrightarrow \frac{1}{2}(\frac{1}{3}    
+    \begin{pmatrix}
+    -2 & 1 & -2 & 6\\
+    -2 & -2 & 1 & 6\\
+    1 & -2 & -2 & 6\\
+    0 & 0 & 0 & 3
+    \end{pmatrix}
+    \begin{pmatrix} x\\y\\z\\1 \end{pmatrix} + \begin{pmatrix} x\\y\\z\\1 \end{pmatrix}) = \begin{pmatrix}1\\1\\1\\1 \end{pmatrix}
+    \\
+    \\
+    \Longleftrightarrow
+    \begin{cases}
+    -2x+y-2z+6=6-3x\\ -2x-2y+z+6=6-3y\\ x-2y-2z+6=6-3z
+    \end{cases}
+    \Longleftrightarrow
+    \begin{cases}
+    x+y-2z = 0\\ -2x+y+z=0\\ x-2y+z = 0
+    \end{cases}
+    \Longleftrightarrow \quad x=y=z
+\end{gather*}
+
+Resolviendo el sistema encontramos que estos son los puntos de la forma $r: (\lambda, \lambda, \lambda)$, con $\lambda \in \mathbb{R}$, es decir, la recta con expresión paramétrica $r: (0,0,0) + [(1,1,1)]$. En consecuencia, el plano respecto al que se hace la simetría es el generado por $r^{\perp}$ y que pasa por el punto p. Este plano es $\tau: (1,1,1) + [(1,-1,0),(1,0,-1)]$
+\\
+
+En conclusión, $F = h \circ f$ es una rotación compuesta con una simetría especular, donde el eje de rotación es $r: (0,0,0) + [(1,1,1)]$ y esta rotación es de un ángulo $\alpha = \pm \frac{2\pi}{3}$. El plano respecto al que se hace la simetría es $\tau: (1,1,1) + [(1,-1,0),(1,0,-1)]$, y es perpendicular a $r$. La expresión matricial de $F$ en la base canónica es la obtenido en (1).
+\\
+
+\hspace*{10mm} \textbf{(ii)} Utilizaremos la descomposición de $F$ como una rotación seguida de una simetría especular. Nos fijamos que el plano de simetría de $F$ es paralelo al plano respecto al que se hace la simetría $g$. Esto es inmediato observarlo, ya que estos planos, $\tau$ y $\pi'$ respectivamente, tienen ecuaciones paramétricas $\tau: (1,1,1) + [(1,-1,0),(1,0,-1)]$ y $\pi': (0,0,0)+ [(1,-1,0),(1,0,-1)]$, donde vemos que los vectores que los generan son los mismos y que $(1,1,1) \in \tau$ no pertenece a $\pi'$, ya que substituyendo en sus ecuaciones tenemos que $1+1+1=3\neq 0$. Por tanto $\tau$ y $\pi'$ son paralelos.
+
+Al ser estos planos paralelos, la composición de estos dos movimientos dará resultado a una traslación. Así que el movimiento $G$ será una rotación seguida de una traslación. La rotación tiene las mismas características que la rotación de $F$, es decir, al rededor de la recta $r: (\lambda, \lambda, \lambda)$ con $\lambda \in \mathbb{R}$ con un ángulo $\alpha = \pm \frac{2\pi}{3}$. La traslación tendrá dirección el vector perpendicular a los planos $\tau$ y $\pi'$, con el sentido del primero al segundo y módulo el doble de su distancia. Para encontrar un vector perpendicular a los planos, calculemos el producto vectorial entre los vectores que generan estos planos.
+
+\begin{gather*}
+    (1,0,-1)\wedge(1,-1,0) = \begin{vmatrix} i & j & k\\ 1 & 0 & -1\\ 1&-1&0 \end{vmatrix} = -i-j-k \Longrightarrow (-1,-1,-1)
+\end{gather*}
+
+El vector $(-1,-1,-1)$, que es perpendicular a los 2 vectores anteriores, une los planos yendo de $\tau$ a $\pi'$ que es el orden de la composición. Una vez obtenido un vector perpendicular a los planos, para encontrar la distancia entre ellos simplemente tenemos que resolver el siguiente sistema en función de $\lambda$ y con $p\in\tau$:
+
+\begin{gather*}
+    p + \lambda(-1,-1,-1)\in \pi' \Longleftrightarrow
+    (1,1,1) +\lambda(-1,-1,-1)\in \pi'\\
+    \\
+    \text{Como }\pi': x+y+z=0 \Longrightarrow (1-\lambda) + (1-\lambda) + (1-\lambda) = 0 \Longleftrightarrow\lambda = 1
+\end{gather*}
+
+Por tanto la traslación será la de $2\lambda$ veces el vector $(-1,-1,-1)$, es decir, la traslación tendrá por vector el $(-2,-2,-2)$. En conclusión, el movimiento $G$ consta de una rotación de eje $r:(0,0,0) + [(1,1,1)]$ y ángulo $\pm \frac{2\pi}{3}$ compuesta con una traslación de vector $(-2,-2,-2)$.
+
+\pagebreak
+
+\hspace*{10mm} \textbf{(iii)} Nos fijamos que el punto $(0,0,0) \in r$ donde $r$ es la recta al rededor de la cual se hace la rotación en el movimiento $F$. Por tanto la imagen del $(0,0,0)$ es fija respecto a la rotación y solamente le afectará la simetría. Sabemos que dada una simetría $\phi$, $\phi^{2} = Id$. Por tanto, $F^{15}(0,0,0) = F^{14 + 1}(0,0,0) = F(0,0,0)$. Por tanto simplemente tenemos que calcular la imagen por $F$ de este punto.
+
+\begin{gather*}
+    F(0,0,0) = \frac{1}{3}
+    \begin{pmatrix}
+    -2 & 1 & -2 & 6\\
+    -2 & -2 & 1 & 6\\
+    1 & -2 & -2 & 6\\
+    0 & 0 & 0 & 3
+    \end{pmatrix}
+    \begin{pmatrix}0\\0\\0\\1 \end{pmatrix}
+    = \frac{1}{3}
+    \begin{pmatrix} 6\\6\\6\\3 \end{pmatrix}
+    =
+    \begin{pmatrix} 2\\2\\2\\1 \end{pmatrix}
+\end{gather*}
+
+Por tanto, $F^{15}(0,0,0) = (2,2,2)$.
+\\
+
+Observamos que la translación de $G$ es dada por un vector paralelo a la recta del eje de rotación\footnote{Esto es inmediato comprovarlo, ya que el vector de traslación es el $(-2,-2,-2)$ y el vector director del eje de rotación $r$ es el $(1,1,1)$, que son claramente dependientes, solamente difieren en una constante $\mu = -2$.}. Por tanto cuando componemos $G^2$ podemos primero aplicar dos veces la rotación y seguidamente dos veces la traslación. Por inducción, para $G^{n}$ podemos realizar primero $n$ rotaciones y seguidamente $n$ traslaciones. Sea $\psi$ la rotación de $G$, como la rotación $\psi$ se da en un ángulo de $\pm \frac{2\pi}{3}$ tenemos que $\psi^{18}$ es una rotación de ángulo $\pm \frac{2\pi}{3}18 = \pm 12\pi \equiv 0$. Así que al aplicar la rotación 18 veces a un punto, este punto acabaría en el mismo sitio. Pero si aplicamos la traslación del vector $(-2,-2,-2)$ 18 veces, esto será equivalente a aplicar la traslación del vector $18\times(-2,-2,-2) = (-36,-36,-36)$. Por tanto, finalmente obtenemos que:
+
+\begin{gather*}
+    G^{18}(0,0,1) = (0,0,1) + (-36,-36,-36) = (-36,-36,-35)
+\end{gather*}
