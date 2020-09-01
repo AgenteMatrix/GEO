@@ -6,7 +6,7 @@
 
 ### Entregables
 
-Actualmente este repositorio los siguientes entregables:
+Actualmente este repositorio contiene todos los entregables de la asignatura. Estos son:
 
 - Entregable T1
 - Entregable T2
